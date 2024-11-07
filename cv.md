@@ -1,5 +1,3 @@
-# __[rsschool-cv](https://rs.school/)__
-
 # __Aliaksandr Baiko__
 
 ## Contact:
