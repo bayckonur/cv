@@ -14,15 +14,46 @@ I enrolled in the Belarusian State Technological University for mechatronic syst
 ## __Skills:__
 - __HTML__;
 - __CSS__;
-- __JavaScript__ (Learning in progress);
+- __JavaScript__ (Basic);
 - __Git__.
+- __Api__.
+- __AMPS, WAMP and MAMP__.
+- __Wordpress__.
 
 ## __Code:__
 
 ```
-function multiply(a, b){
-  return a * b
+"use strict";
+
+const ticketPriceElement = document.getElementById('ticketPrice');
+const baggagePriceElement = document.getElementById('baggagePrice');
+const checkbox = document.getElementById('checkbox');
+
+const initialTicketPrice = getNumericPrice(ticketPriceElement); 
+const initialBaggagePrice = getNumericPrice(baggagePriceElement);
+
+
+function getNumericPrice(element) {
+    const text = element.textContent;
+    return parseFloat(text.replace(/[^\d.-]/g, ''));
 }
+
+
+checkbox.addEventListener('change', function() {
+    let numTicketPrice = getNumericPrice(ticketPriceElement); 
+    let numBaggagePrice = getNumericPrice(baggagePriceElement);
+
+    if (checkbox.checked) {
+        let countPrice = numBaggagePrice + numTicketPrice;
+        ticketPriceElement.textContent = `${countPrice} €`;
+        baggagePriceElement.textContent = 'включен'; 
+        baggagePriceElement.style.color = 'black'; 
+    } else {
+        ticketPriceElement.textContent = `${initialTicketPrice} €`;
+        baggagePriceElement.textContent = `+ ${initialBaggagePrice} €`;
+        baggagePriceElement.style.color = '#0c73fe';
+    }
+});
 ```
 ## __Experience:__
 .....
@@ -32,5 +63,5 @@ function multiply(a, b){
 - __Courses:__ RS School JS/FE Pre-School 2024Q2.
 
 ## __Languages__
-- __English:__ A2 (Previously I was at B2 level, but due to lack of practice, my proficiency has dropped. Currently, I am studying at a B1 level.)
+- __English:__ B1.
 - __Russian:__ Native speaker.
